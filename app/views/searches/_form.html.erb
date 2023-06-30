@@ -13,30 +13,30 @@
 				<%= origin_form.text_field :city, class: "form-control mb-3" %>
 
 				<%= origin_form.label "State", class: "form-label" %>
-				<%= origin_form.text_field :state, class: "form-control mb-3" %>
+				<%= origin_form.select :state, us_states.map {|abbr, state| [state, abbr] }, { include_blank: "Please Select" }, class:"form-select mb-3" %>
 
 				<%= origin_form.label "Zip Code", class: "form-label" %>
 				<%= origin_form.text_field :zip_code, class: "form-control mb-3" %>
 			<% end %>
 		</div>
 		<div class="mb-3 col">
-		<%= f.fields_for :destination, class: "" do |destination_form| %>
-			<h2 class="fs-4 mb-3">Destination Address</h2>
-			<%= destination_form.label "Title", class: "form-label" %>
-			<%= destination_form.text_field :title, class: "form-control mb-3" %>
+			<%= f.fields_for :destination, class: "" do |destination_form| %>
+				<h2 class="fs-4 mb-3">Destination Address</h2>
+				<%= destination_form.label "Title", class: "form-label" %>
+				<%= destination_form.text_field :title, class: "form-control mb-3" %>
 
-			<%= destination_form.label "Street", class: "form-label" %>
-			<%= destination_form.text_field :street, class: "form-control mb-3" %>
+				<%= destination_form.label "Street", class: "form-label" %>
+				<%= destination_form.text_field :street, class: "form-control mb-3" %>
 
-			<%= destination_form.label "City", class: "form-label" %>
-			<%= destination_form.text_field :city, class: "form-control mb-3" %>
+				<%= destination_form.label "City", class: "form-label" %>
+				<%= destination_form.text_field :city, class: "form-control mb-3" %>
 
-			<%= destination_form.label "State", class: "form-label" %>
-			<%= destination_form.text_field :state, class: "form-control mb-3" %>
+				<%= destination_form.label "State", class: "form-label" %>
+				<%= destination_form.select :state, us_states.map {|abbr, state| [state, abbr] }, { include_blank: "Please Select" }, class:"form-select mb-3" %>
 
-			<%= destination_form.label "Zip Code", class: "form-label" %>
-			<%= destination_form.text_field :zip_code, class: "form-control mb-3" %>
-		<% end %>
+				<%= destination_form.label "Zip Code", class: "form-label" %>
+				<%= destination_form.text_field :zip_code, class: "form-control mb-3" %>
+			<% end %>
 		</div>
 		<%= f.submit 'Calculate', class: 'btn btn-primary' %>
 	</div>
