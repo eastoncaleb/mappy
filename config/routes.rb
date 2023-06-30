@@ -21,7 +21,6 @@ end
   resources :notifications, only: [:index]
   resources :announcements, only: [:index]
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
-  resources :places
   resources :searches
   root 'searches#index'
   # root to: 'home#index'
