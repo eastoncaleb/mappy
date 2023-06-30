@@ -1,11 +1,10 @@
 class SearchesController < ApplicationController
   before_action :authenticate_user!
+  before_action :search, only: :show
+  before_action :searches, only: :index
 
-  def index
-    @searches = Search.order('created_at DESC')
-  end
+  def index; end
 
-  # todo: have to call google maps service and handle distance and travel time
   def create
     @search = Search.new(search_params)
     @search.origin = Place.find_or_initialize_by(search_params[:origin_attributes])
@@ -21,8 +20,6 @@ class SearchesController < ApplicationController
   end 
 
   def show
-    @search = Search.find(params[:id])
-
     respond_to do |format|
       format.html
       format.json { render json: [@search.origin.address, @search.destination.address] }
@@ -35,7 +32,20 @@ class SearchesController < ApplicationController
     @search.destination = Place.new
   end
 
+  def destroy
+    search.destroy
+    redirect_to searches_url, notice: "Search was successfully deleted"
+  end
+
   private
+
+  def search
+    @search ||= Search.find(params[:id])
+  end
+
+  def searches
+    @searches = Search.order('created_at DESC') 
+  end
 
   def search_params
     params.require(:search).permit(origin_attributes: [:title, :street, :city, :state, :zip_code], destination_attributes: [:title, :street, :city, :state, :zip_code])

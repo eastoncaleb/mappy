@@ -14,4 +14,9 @@
 	<td>
 		<%= search.distance %>
 	</td>
+	<td>
+		<%= link_to "Delete", search_path(search),
+                    method: :delete,
+                    data: { "turbo-frame": "_top" } %>
+	</td>
 </tr>

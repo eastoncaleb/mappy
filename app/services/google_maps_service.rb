@@ -1,5 +1,3 @@
-# app/services/google_maps_service.rb
-
 class GoogleMapsService
   include HTTParty
   base_uri 'https://maps.googleapis.com/maps/api'
@@ -29,7 +27,6 @@ class GoogleMapsService
   end
 
   def handle_error(code, message)
-    # Handle the error based on the code and message
-    # You can log the error, raise an exception, or return an appropriate response
+    Rails.logger.error("Error #{code}: #{message}") 
   end
 end
