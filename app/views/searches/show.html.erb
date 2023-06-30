@@ -3,10 +3,19 @@
 
 <%= render "shared/two_level_breadcrumbs", previous_page:, current_page: %>
 
-<header><h1 class="display-4"><%= @search.origin.title %> - <%= @search.destination.title %></h1></header>
+<header class="mb-4 pb-2 border-bottom text-center"><h1 class="display-4 fs-2 fw-bold"><%= @search.origin.title %> - <%= @search.destination.title %></h1></header>
 
-<p><b>Origin Address</b>: <%= @search.origin.address %> - <b>Destination Address</b>: <%= @search.destination.address %></p>
-<p><b>Origin Coordinates</b>: <%= @search.origin.latitude %> <%= @search.origin.longitude %> - <b>Destination Coordinates</b>: <%= @search.destination.latitude %> <%= @search.destination.longitude %></p>
+<div class="row">
+	<div class="col">
+		<p>
+			<b>Origin Address</b>: <%= @search.origin.address %>
+		</p>
+		<p>
+			<b>Destination Address</b>: <%= @search.destination.address %>
+		</p>
+	</div>
 
-<%= render 'map' %>
-
+	<div class="col">
+		<%= render 'map' %>
+	</div>
+</div>
