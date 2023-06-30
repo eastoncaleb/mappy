@@ -1,0 +1,21 @@
+<header class="d-flex justify-content-center">
+	<h1 class="display-4 fs-2 mx-2 fw-bold">Previous Searches</h1>
+	<div class="mx-2">
+		<%= link_to 'New Search', new_search_path, class: 'col btn btn-primary mb-4' %>
+	</div>
+</header>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Origin</th>
+      <th scope="col">Destination</th>
+      <th scope="col">Distance</th>
+      <th scope="col">Travel Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @searches %>
+  </tbody>
+</table>

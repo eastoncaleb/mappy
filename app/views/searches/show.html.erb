@@ -1,0 +1,12 @@
+<% previous_page = ["Previous Searches", searches_path] %>
+<% current_page = "#{@search.origin.title} - #{@search.destination.title}" %>
+
+<%= render "shared/two_level_breadcrumbs", previous_page:, current_page: %>
+
+<header><h1 class="display-4"><%= @search.origin.title %> - <%= @search.destination.title %></h1></header>
+
+<p><b>Origin Address</b>: <%= @search.origin.address %> - <b>Destination Address</b>: <%= @search.destination.address %></p>
+<p><b>Origin Coordinates</b>: <%= @search.origin.latitude %> <%= @search.origin.longitude %> - <b>Destination Coordinates</b>: <%= @search.destination.latitude %> <%= @search.destination.longitude %></p>
+
+<%= render 'map' %>
+

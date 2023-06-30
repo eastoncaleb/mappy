@@ -1,0 +1,8 @@
+<% previous_page = ["Previous Searches", searches_path] %>
+<% current_page = "New Search" %>
+
+<%= render "shared/two_level_breadcrumbs", previous_page:, current_page: %>
+
+<header><h1 class="display-4 fs-2 text-center fw-bold border-bottom pb-2 mb-4"><%= current_page %></h1></header>
+
+<%= render 'form' %>
