@@ -1,4 +1,6 @@
 class SearchesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @searches = Search.order('created_at DESC')
   end
@@ -6,8 +8,8 @@ class SearchesController < ApplicationController
   # todo: have to call google maps service and handle distance and travel time
   def create
     @search = Search.new(search_params)
-    @search.origin = Place.new(search_params[:origin_attributes])
-    @search.destination = Place.new(search_params[:destination_attributes])
+    @search.origin = Place.find_or_initialize_by(search_params[:origin_attributes])
+    @search.destination = Place.find_or_initialize_by(search_params[:destination_attributes])
   
     if @search.save
       flash[:success] = "Search created successfully!"

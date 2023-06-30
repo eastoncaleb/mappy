@@ -5,14 +5,26 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require 'faker'
 
-20.times do
-	Place.create(
-		title: Faker::Fantasy::Tolkien.location,
-		street: Faker::Address.street_address,
-		city: Faker::Address.city, 
-		state: Faker::Address.state,
-		zip_code: Faker::Address.zip_code
-	)
-end
+Place.find_or_create_by(
+	title: "White House",
+	street: "1600 Pennsylvania Ave NW",
+	city: "Washington", 
+	state: "DC",
+	zip_code: "20500"
+)
+
+Place.find_or_create_by(
+	title: "Lincoln Memorial",
+	street: "2 Lincoln Memorial Cir NW",
+	city: "Washington", 
+	state: "DC",
+	zip_code: "20002"
+)
+
+Search.create(
+	origin: Place.first,
+	destination: Place.second,
+	travel_time: "9 min",
+	distance: "1.5 mi"
+)
