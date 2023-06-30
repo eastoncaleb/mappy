@@ -49,9 +49,16 @@ Now, to debug, all you have to do is add `debugger` on any line in your code and
 
 **Screenshots:**
 
+Log-In:
 <img width="1378" alt="Screenshot 2023-06-30 at 2 59 49 PM" src="https://github.com/eastoncaleb/mappy/assets/37001399/406fd46e-52a4-4fc3-8c40-dbe67d131201">
+
+Search Index:
 <img width="1664" alt="Screenshot 2023-06-30 at 3 00 05 PM" src="https://github.com/eastoncaleb/mappy/assets/37001399/ef262c00-1932-4831-b226-29a3af9178bf">
+
+Search New:
 <img width="1671" alt="Screenshot 2023-06-30 at 3 00 20 PM" src="https://github.com/eastoncaleb/mappy/assets/37001399/4987b313-ad25-4253-89f1-fc797e235df7">
+
+Search Show:
 <img width="1663" alt="Screenshot 2023-06-30 at 3 00 35 PM" src="https://github.com/eastoncaleb/mappy/assets/37001399/113c2996-9b0a-4f15-80fb-f8a47cf30ebb">
 
 
