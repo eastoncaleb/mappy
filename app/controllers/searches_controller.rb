@@ -15,7 +15,6 @@ class SearchesController < ApplicationController
       redirect_to @search
     else
       flash.now[:error] = @search.errors.full_messages.join("<br />")
-      # render :new, status: 422
     end
   end 
 

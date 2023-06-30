@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_29_134039) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_30_152814) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -89,8 +89,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_29_134039) do
     t.bigint "user_id"
     t.bigint "origin_id"
     t.bigint "destination_id"
-    t.float "distance"
-    t.float "travel_time"
+    t.string "distance"
+    t.string "travel_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["destination_id"], name: "index_searches_on_destination_id"
