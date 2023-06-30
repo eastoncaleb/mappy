@@ -2,7 +2,7 @@
 
 Mappy is a simple app that allows you to search for an origin and destination location and it will provide you with the distance and travel time between those locations along with a dynamic map overview.
 
-Mappy Requirements:
+**Mappy Requirements:**
 
 - Ruby 3.2.2
 - Rails 7.0.5.1
@@ -21,7 +21,7 @@ rails db:seed
 bin/dev
 ```
 
-**Note on Debugging**
+**Note on Debugging:**
 
 Because of the use of foreman, an interactive debugger won't be possible in the same shell that you're running your rails server. To get around this you can do the following:
 
