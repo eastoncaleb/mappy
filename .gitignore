@@ -34,3 +34,12 @@
 !/app/assets/builds/.keep
 
 /node_modules
+
+# Ignore the encrypted credentials file
+/config/credentials.yml.enc
+
+# Ignore the generated secret key file
+/config/secrets.yml.key
+
+# Ignore system-specific files (e.g., .DS_Store on macOS)
+**/.DS_Store
