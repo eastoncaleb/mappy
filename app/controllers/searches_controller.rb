@@ -44,11 +44,13 @@ class SearchesController < ApplicationController
   end
 
   def searches
-    @searches = Search.order('created_at DESC') 
+    @searches = current_user.searches.order('created_at DESC') 
   end
 
   def search_params
-    params.require(:search).permit(origin_attributes: [:title, :street, :city, :state, :zip_code], destination_attributes: [:title, :street, :city, :state, :zip_code])
+    prms = params.require(:search).permit(origin_attributes: [:title, :street, :city, :state, :zip_code], destination_attributes: [:title, :street, :city, :state, :zip_code])
+    prms[:user_id] = current_user.id
+    prms
   end
 
   def handle_maps_data
