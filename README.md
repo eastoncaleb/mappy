@@ -25,22 +25,6 @@ bin/dev
 
 Because of the use of foreman, an interactive debugger won't be possible in the same shell that you're running your rails server. To get around this you can do the following:
 
-Ruby debugger should be installed by default with Rails 7. However, if it's not, you can add this to your Gemfile:
-
-`gem "debug", platforms: %i[ mri mingw x64_mingw ]`
-
-and run `bundle install`.
-
-Add the following in `application.rb`
-
-```ruby
-require "rails/all"
-
-if defined?(Rails::Server) && Rails.env.development?
-  require "debug/open_nonstop"
-end
-```
-
 Start your server e.g. `bin/dev` and open a new shell and run `bundle exec rdbg -a`
 
 **Important Note**: in my experience at least, you must enter `c` to continue in this shell in order for it to actually pick up on debugging instances later
