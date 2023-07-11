@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Searches", type: :system do
   let!(:user) { create(:user) }
   
-  context "new search" do
+  context "search" do
     before do
       sign_in user
       visit searches_path
