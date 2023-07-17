@@ -72,17 +72,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_30_170936) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "places_searches", force: :cascade do |t|
-    t.bigint "starting_place_id"
-    t.bigint "ending_place_id"
-    t.bigint "search_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["ending_place_id"], name: "index_places_searches_on_ending_place_id"
-    t.index ["search_id"], name: "index_places_searches_on_search_id"
-    t.index ["starting_place_id"], name: "index_places_searches_on_starting_place_id"
-  end
-
   create_table "searches", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "origin_id"
@@ -128,9 +117,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_30_170936) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "places_searches", "places", column: "ending_place_id"
-  add_foreign_key "places_searches", "places", column: "starting_place_id"
-  add_foreign_key "places_searches", "searches"
   add_foreign_key "searches", "places", column: "destination_id"
   add_foreign_key "searches", "places", column: "origin_id"
   add_foreign_key "searches", "users"

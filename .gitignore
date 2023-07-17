@@ -43,3 +43,4 @@
 
 # Ignore system-specific files (e.g., .DS_Store on macOS)
 **/.DS_Store
+**/.nova
