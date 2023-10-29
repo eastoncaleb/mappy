@@ -15,6 +15,7 @@ Mappy is a simple app that allows you to search for an origin and destination lo
 
 ```
 bundle install
+yarn install
 rails db:create
 rails db:migrate
 rails db:seed
